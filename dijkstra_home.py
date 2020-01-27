@@ -1,10 +1,13 @@
 from Network import Network
 
-path_dir: str = r"C:\Users\larsd\PycharmProjects\Dijkstra\DistanzenNeu.csv"
+str = "C:/Users/larsd/PycharmProjects/Dijkstra/DistanzenNeu.csv"
 
-Map = Network.generate_network(str)
+print(str)
 
-Nodes = Network.get_nodes()
+Map = 0
+Network.generate_network(Map,str)
+
+Nodes = Network.get_nodes(Map)
 
 for locations in Nodes:
     print(locations)
