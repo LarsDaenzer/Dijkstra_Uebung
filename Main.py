@@ -1,5 +1,8 @@
 from Dijkstra_Algorithm import Dijkstra
+from Network import Network
 
-dijkstra = Dijkstra
-dijkstra.__init__(dijkstra)
-dijkstra.test(dijkstra)
+
+path = "C:/Users/larsd/PycharmProjects/Dijkstra/DistanzenNeu.csv"
+dijkstra = Dijkstra(Network(path))
+
+dijkstra.test()
