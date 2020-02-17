@@ -19,14 +19,3 @@ class Dijkstra:
             print(nodes)
 
     def run(self,start,destination):
-
-
-
-
-
-
-
-
-
-
-
