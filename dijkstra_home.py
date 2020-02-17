@@ -3,11 +3,9 @@ from Network import Network
 str = "C:/Users/larsd/PycharmProjects/Dijkstra/DistanzenNeu.csv"
 
 print(str)
+network = Network(str)
 
-Map = 0
-Network.generate_network(Map,str)
-
-Nodes = Network.get_nodes(Map)
+Nodes = network.get_nodes()
 
 for locations in Nodes:
     print(locations)
