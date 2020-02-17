@@ -1,4 +1,4 @@
-from dijkstra_home import Dijkstra
+from Dijkstra_Algorithm import Dijkstra
 
 dijkstra = Dijkstra
 dijkstra.__init__(dijkstra)
