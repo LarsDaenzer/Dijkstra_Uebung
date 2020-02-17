@@ -1,6 +1,8 @@
+import tkinter as tk
+
+from Network import Network
 from View import View
 from Dijkstra_Algorithm import Dijkstra
-from Network import Network
 
 
 class Presenter(tk.Frame):
@@ -15,15 +17,14 @@ class Presenter(tk.Frame):
         self.__dijkstra = Dijkstra(self.__network)
         self.__view = View(self)
 
-        self.master.title("Dijkstra Algorithm")
-        self.master.maxsize(1000, 400)
-
         self.__view.button.bind("<Button-1>", self.button_event_handler)
+
         self.mainloop()
 
     def button_event_handler(self, event):
-        start_point = self.__view.start_point.get()
-        end_point = self.__view.end_point.get()
+        start = self.__view.start_point.get()
+        destination = self.__view.end_point.get()
+        print("running algorithm. From: " + start + " To: " + destination)
 
 
 presenter = Presenter()
