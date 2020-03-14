@@ -1,30 +1,25 @@
-import tkinter as tk
-
-from Network import Network
+from Dijkstra import Dijkstra
 from View import View
-from Dijkstra_Algorithm import Dijkstra
 
 
-class Presenter(tk.Frame):
+class Presenter:
     __dijkstra: Dijkstra
     __view: View
 
-    def __init__(self):
-        super().__init__(None)
-        self.pack()
-
-        self.__network = Network("DistanzenNeu.csv")
-        self.__dijkstra = Dijkstra(self.__network)
-        self.__view = View(self)
+    def __init__(self, view, dijkstra):
+        self.__dijkstra = dijkstra
+        self.__view = view
 
         self.__view.button.bind("<Button-1>", self.button_event_handler)
+        self.__dijkstra.attach(self.run_complete_handler)
 
-        self.mainloop()
+        view.mainloop()
 
     def button_event_handler(self, event):
-        start = self.__view.start_point.get()
-        destination = self.__view.end_point.get()
+        start = self.__view.start_text.get()
+        destination = self.__view.destination_text.get()
         print("running algorithm. From: " + start + " To: " + destination)
+        self.__dijkstra.run(start, destination)
 
-
-presenter = Presenter()
+    def run_complete_handler(self, event):
+        print(event.type + ": algorithm completed!")

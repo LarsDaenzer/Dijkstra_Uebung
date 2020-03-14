@@ -1,21 +1,26 @@
-from tkinter import Frame, Label, Button, Entry
+import tkinter as tk
+from tkinter import Label, Button, Entry
 
 
-class View:
-    __frame: Frame
+class View(tk.Frame):
     button: Button
     text_field: Entry
 
-    def __init__(self, frame: Frame):
-        self.__frame = frame
+    def __init__(self, **kw):
+        super().__init__(**kw)
+        self.pack()
 
-        text = Label(frame, text="Dijkstra Algorithmus")
+        self.master.title("MVC Beispiel")
+        self.master.maxsize(1000, 400)
+
+        text = Label(self, text="Dijkstra Algorithmus")
         text.pack()
 
-        self.start_point = Entry(Frame)
-        self.start_point.pack()
+        self.start_text = Entry(self)
+        self.start_text.pack()
 
-        self.end_point = Entry(Frame)
-        self.end_point.pack()
+        self.destination_text = Entry(self)
+        self.destination_text.pack()
 
-        self.button = Button(frame, text="Start")
+        self.button = Button(self, text="run!")
+        self.button.pack()
