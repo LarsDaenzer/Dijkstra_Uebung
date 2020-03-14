@@ -10,17 +10,23 @@ class View(tk.Frame):
         super().__init__(**kw)
         self.pack()
 
-        self.master.title("MVC Beispiel")
+        self.master.title("Dijkstra Algorithmus")
         self.master.maxsize(1000, 400)
 
         text = Label(self, text="Dijkstra Algorithmus")
         text.pack()
 
+        start_text = Label(self, text="Start Ort:")
+        start_text.pack()
         self.start_text = Entry(self)
         self.start_text.pack()
 
+        ziel_text = Label(self, text="Ziel Ort:")
+        ziel_text.pack()
         self.destination_text = Entry(self)
         self.destination_text.pack()
 
-        self.button = Button(self, text="run!")
+        blank = Label(self, text="")
+        blank.pack()
+        self.button = Button(self, text="Start!")
         self.button.pack()

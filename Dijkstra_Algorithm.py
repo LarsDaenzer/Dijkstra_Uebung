@@ -18,3 +18,4 @@ class Dijkstra:
     def run(self, start, destination):
         self.__start = start
         self.__destination = destination
+
