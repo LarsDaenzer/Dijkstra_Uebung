@@ -7,5 +7,6 @@ network = Network("DistanzenNeu.csv")
 dijkstra = Dijkstra(network)
 view = View()
 
+
 presenter = Presenter(view, dijkstra)
 

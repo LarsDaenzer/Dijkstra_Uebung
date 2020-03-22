@@ -41,7 +41,7 @@ class Network:
     def get_node(self, name: str) -> Node:
         return self.__nodes[name]
 
-    def get_distance(self, from_node: Node, to_node: Node) -> int:
+    def get_distance(self, from_node: object, to_node: object) -> object:
         if from_node == to_node:
             return 0
 

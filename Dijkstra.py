@@ -18,15 +18,17 @@ class Dijkstra(Observable):
 
         self.__unvisited_nodes = network.get_nodes().values()
 
-    def run(self, start: str, destination: str) -> None:
+    def run(self, start: object, destination: object) -> object:
         self.__start = self.__network.get_node(start)
         self.__destination = self.__network.get_node(destination)
+        self.is_destination_closest()
         self._notify(self, "run_completed")
 
     def is_destination_closest(self) -> bool:
         for node in self.__unvisited_nodes:
             if self.__destination.current_distance > node.current_distance:
                 return False
+
         return True
 
     def get_closest_node(self) -> Node:
